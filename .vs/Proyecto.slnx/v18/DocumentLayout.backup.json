@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gestion Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gestion Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\uploadproductohandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\uploadproductohandler.ashx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\serviciosinventario.asmx||{FB9167C9-D3B8-4EDA-8083-9AF6B6F6DA62}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\serviciosinventario.asmx||{FB9167C9-D3B8-4EDA-8083-9AF6B6F6DA62}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\serviciosinventario.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\serviciosinventario.asmx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\uploadproductohandler.ashx||{DAB1E6DB-4119-49A3-ACE3-0FE8F3E0669F}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\uploadproductohandler.ashx||{DAB1E6DB-4119-49A3-ACE3-0FE8F3E0669F}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\inventario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\inventario.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\models\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\models\\productodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\inventario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\inventario.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\models\\productodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\models\\productodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\models\\respuestadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\models\\respuestadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\login.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\login.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gestion Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\inventario.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gestion Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\inventario.aspx.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\contact.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|c:\\users\\jeimy\\documents\\tareas 2026\\appvanguardia\\proyecto\\gesti\u00F3n inventario\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{0F280F16-EA47-4416-AC34-29633860AA95}|Gesti\u00F3n Inventario\\Gesti\u00F3n Inventario.csproj|solutionrelative:gesti\u00F3n inventario\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\.gitignore",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\.gitignore",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\.gitignore",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\.gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAIAAAAAAAAAA==",
+              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHgSURBVEhLtZVdTsJAFIWroTyDK3ELJuCbsA1ZhQRFRETkV6yV8AAsgAI\u002BugW3wAr0RUop7Tj3dmagtLXFhJOc3mEynXu\u002BSWmlg4oQcsSGqOFwSKcIzAcY7rFZdeZkWf42DOMsl7v8ZNsEazAYEMuyXF5zr7nXWG3bJqPRiMznc6Kqb1\u002BtdueUbePSMasoSASiN0sW2AJbwrSRMKwBJZNJKZVOJeJx\u002BaPRbHma\u002BDbAqzOMpBPa5DydxiZsSijGKoo30MZjrH8pm81iVRQFKygmxxNs6K9\u002Bv4/nvlqZ1CticBuOl8IGWS4NogsviWmuSe2p7uH2EMAKTQsn2FUmkxUnEKher4dPjH9ymjogva47BNXHWhgBXCRpomnOxB6KRKCqKhJsznoneUD6BSOoPFSjEUwnByJQlFf8l7rTO6ndyalZcm7TNEn5vhJG4CD8h\u002BAikwkn6HZf8F3jSSu8OfNt/yx0sqIEpbtyOAGsmE4nzsQeikTQ7jwTkxKItCyxX2qenBsIirelcAJAmB2KoNlq4/Psl1Z4K/UuQeGmGIGA6n02xbqPgIBuwH4FqN5o4vMMKYOSBhkI8oVrTwfPBwdWxOQYWt7D/P5duT768D7HJhFtU9MBVj5XyF\u002B59jywJOkX7ucXnGOxDX8AAAAASUVORK5CYII=",
+              "WhenOpened": "2026-09-22T04:37:15.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiciosInventario.asmx.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\ServiciosInventario.asmx.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\ServiciosInventario.asmx.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\ServiciosInventario.asmx.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\ServiciosInventario.asmx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T00:59:56.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UploadProductoHandler.ashx.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\UploadProductoHandler.ashx.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\UploadProductoHandler.ashx.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\UploadProductoHandler.ashx.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\UploadProductoHandler.ashx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T00:55:02.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UploadProductoHandler.ashx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\UploadProductoHandler.ashx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\UploadProductoHandler.ashx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\UploadProductoHandler.ashx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\UploadProductoHandler.ashx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000192|",
+              "WhenOpened": "2026-09-22T02:20:40.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiciosInventario.asmx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\ServiciosInventario.asmx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\ServiciosInventario.asmx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\ServiciosInventario.asmx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\ServiciosInventario.asmx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003504|",
+              "WhenOpened": "2026-09-22T02:20:57.43Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Inventario.aspx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Inventario.aspx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Inventario.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-22T01:16:09.159Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProductoDTO.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\ProductoDTO.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Models\\ProductoDTO.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\ProductoDTO.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Models\\ProductoDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T00:45:41.425Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RespuestaDTO.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\RespuestaDTO.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Models\\RespuestaDTO.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\RespuestaDTO.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Models\\RespuestaDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T00:46:08.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\ProductoDAO.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Models\\ProductoDAO.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Models\\ProductoDAO.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Models\\ProductoDAO.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwDsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T00:48:05.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Inventario.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Inventario.aspx.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Inventario.aspx.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAQwC0AAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T01:22:01.661Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Login.aspx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Login.aspx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Login.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-22T01:20:42.24Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Login.aspx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T01:21:12.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Web.config",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Web.config",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Web.config",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Web.config",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAADcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-09-22T00:38:38.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Login.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx.designer.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Login.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Login.aspx.designer.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Login.aspx.designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T02:21:18.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Inventario.aspx.designer.cs",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx.designer.cs",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Inventario.aspx.designer.cs",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Inventario.aspx.designer.cs",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Inventario.aspx.designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-22T02:51:27.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Contact.aspx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Contact.aspx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Contact.aspx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Contact.aspx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Contact.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-22T02:36:18.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Default.aspx",
+              "RelativeDocumentMoniker": "Gesti\u00F3n Inventario\\Default.aspx",
+              "ToolTip": "C:\\Users\\jeimy\\Documents\\tareas 2026\\AppVanguardia\\Proyecto\\Gesti\u00F3n Inventario\\Default.aspx",
+              "RelativeToolTip": "Gesti\u00F3n Inventario\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2026-09-22T02:36:23.25Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
