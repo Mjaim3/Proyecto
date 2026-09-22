@@ -25,7 +25,7 @@
 
             <div class="mb-3 form-check">
                 <asp:CheckBox ID="chkRecuerdame" runat="server" CssClass="form-check-input" />
-                <label class="form-check-label" for="chkRecuerdame">Recordar usuario (Cookie)</label>
+                <label class="form-check-label" for="chkRecuerdame">Recordar usuario</label>
             </div>
 
             <asp:Button ID="btnIngresar" runat="server" Text="Iniciar Sesión" CssClass="w-100 btn btn-primary py-2" OnClick="btnIngresar_Click" />

@@ -25,7 +25,7 @@ namespace Gestion_Inventario
 
         private void CargarCategorias()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["ConexionDB"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["GestionInventario"].ConnectionString;
 
             using (SqlConnection conexion = new SqlConnection(connectionString))
             {
@@ -45,12 +45,32 @@ namespace Gestion_Inventario
                     }
                     catch (Exception )
                     {
-                        // Control de errores opcional
                     }
                 }
             }
 
             ddlCategoria.Items.Insert(0, new ListItem("-- Seleccione una categoría --", ""));
+        }
+
+        protected void lnkCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Session.Clear();
+            Session.Abandon();
+            Response.Redirect("Login.aspx"); 
+        }
+
+        protected void gvProductos_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            string codigoProducto = e.CommandArgument.ToString();
+
+            if (e.CommandName == "EditarProducto")
+            {
+                Response.Redirect($"EditarProducto.aspx?codigo={codigoProducto}");
+            }
+            else if (e.CommandName == "EliminarProducto")
+            {
+
+            }
         }
     }
 }

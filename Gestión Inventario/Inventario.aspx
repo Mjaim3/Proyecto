@@ -10,9 +10,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body class="bg-light">
+
     <form id="form1" runat="server">
+
+        <!-- Barra superior con el usuario y Cerrar Sesión -->
+        <nav class="navbar navbar-dark bg-dark navbar-expand-lg px-4 d-flex justify-content-between mb-4">
+            <span class="navbar-brand mb-0 h1">Plataforma de Inventario</span>
+            <div class="navbar-text text-light">
+                Usuario: <span id="lblUsuario" runat="server">Admin</span> | 
+                <asp:LinkButton ID="lnkCerrarSesion" runat="server" CssClass="text-danger text-decoration-none" OnClick="lnkCerrarSesion_Click">Cerrar Sesión</asp:LinkButton>
+            </div>
+        </nav>
+
         <div class="container py-4">
-            <h2 class="mb-4 text-center">Control de Inventario en Tiempo Real</h2>
+            <h2 class="mb-4 text-center">Control de Inventario</h2>
 
             <!-- Barra de Herramientas: Búsqueda y Botón Nuevo -->
             <div class="row mb-3 g-2">
@@ -20,7 +31,7 @@
                     <input type="text" id="txtBuscar" class="form-control" placeholder="Buscar por código, descripción o categoría..." />
                 </div>
                 <div class="col-md-4 col-sm-12 text-md-end">
-                    <button type="button" class="btn btn-success w-100" data-bs-toggle="modal" data-bs-target="#modalProducto">
+                    <button type="button" class="btn btn-success w-100" onclick="abrirModalRegistrar()">
                         + Registrar Producto
                     </button>
                 </div>
@@ -40,10 +51,11 @@
                                     <th>P. Venta</th>
                                     <th>Existencia</th>
                                     <th>Categoría</th>
+                                    <th>Acciones</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- Los datos se inyectarán dinámicamente mediante AJAX -->
+                                
                             </tbody>
                         </table>
                     </div>
@@ -51,12 +63,12 @@
             </div>
         </div>
 
-        <!-- Modal para Registro de Producto -->
+        <!-- Modal para Registro y Edición de Producto -->
         <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Nuevo Producto</h5>
+                        <h5 class="modal-title" id="modalTitulo">Nuevo Producto</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
                     <div class="modal-body">
@@ -105,57 +117,63 @@
                 </div>
             </div>
         </div>
+
     </form>
-    
 
     <!-- Scripts necesarios: jQuery y Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Script AJAX personalizado -->
+    <<!-- Script AJAX personalizado -->
     <script>
-$(document).ready(function () {
-    // Cargar lista al iniciar la página
-    cargarProductos("");
+        var modoEdicion = false;
+        var fotoActual = "";
 
-    // Búsqueda instantánea en tiempo real mediante evento keyup
-    $("#txtBuscar").on("keyup", function () {
-        var filtro = $(this).val();
-        cargarProductos(filtro);
-    });
+        $(document).ready(function () {
+            cargarProductos("");
 
-    // Guardar producto y subir imagen mediante AJAX
-    $("#btnGuardar").on("click", function () {
-        var fileInput = $("#FileUpload1")[0]; // Debe coincidir con el ID del input HTML
-
-        if (fileInput.files.length > 0) {
-            var formData = new FormData();
-            formData.append("archivo", fileInput.files[0]);
-
-            $.ajax({
-                url: "UploadProductoHandler.ashx",
-                type: "POST",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (resHandler) {
-                    if (resHandler.exitoso) {
-                        enviarDatosProducto(resHandler.ruta);
-                    } else {
-                        alert("Error al subir la imagen: " + resHandler.mensaje);
-                    }
-                },
-                error: function (xhr) {
-                    console.log(xhr.responseText);
-                    alert("Error de conexión con el Handler de imágenes.");
-                }
+            $("#txtBuscar").on("keyup", function () {
+                var filtro = $(this).val();
+                cargarProductos(filtro);
             });
-        } else {
-            enviarDatosProducto(null);
-        }
-    });
-});
 
+            $("#btnGuardar").off("click").on("click", function () {
+                enviarDatosProducto(fotoActual);
+            });
+        });
+
+        function abrirModalRegistrar() {
+            modoEdicion = false;
+            fotoActual = "";
+            $("#modalTitulo").text("Nuevo Producto");
+            $("#txtCodigo").val("").prop("readonly", false);
+            $("#txtDescripcion").val("");
+            $("#txtPrecioCompra").val("");
+            $("#txtPrecioVenta").val("");
+            $("#txtImpuesto").val("15.00");
+            $("#txtExistencia").val("");
+            $("#FileUpload1").val("");
+            
+            var myModal = new bootstrap.Modal(document.getElementById('modalProducto'));
+            myModal.show();
+        }
+
+        function prepararEdicion(codigo, descripcion, pCompra, pVenta, existencia, categoriaId, fotografiaRuta) {
+            modoEdicion = true;
+            fotoActual = fotografiaRuta || "";
+            $("#modalTitulo").text("Editar Producto");
+            $("#txtCodigo").val(codigo).prop("readonly", true); // Bloquea el código para evitar conflictos de llave
+            $("#txtDescripcion").val(descripcion);
+            $("#txtPrecioCompra").val(pCompra);
+            $("#txtPrecioVenta").val(pVenta);
+            $("#txtExistencia").val(existencia);
+            $("[id$='ddlCategoria']").val(categoriaId);
+            $("#FileUpload1").val("");
+
+            var myModal = new bootstrap.Modal(document.getElementById('modalProducto'));
+            myModal.show();
+        }
 
         function cargarProductos(filtro) {
             $.ajax({
@@ -177,6 +195,10 @@ $(document).ready(function () {
                             <td>$${p.PrecioVenta.toFixed(2)}</td>
                             <td><span class="badge bg-secondary">${p.Existencia}</span></td>
                             <td>${p.NombreCategoria}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm me-1" onclick="prepararEdicion('${p.Codigo}', '${p.Descripcion}', ${p.PrecioCompra}, ${p.PrecioVenta}, ${p.Existencia}, ${p.CategoriaId}, '${p.FotografiaRuta || ''}')">Editar</button>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto('${p.Codigo}')">Eliminar</button>
+                            </td>
                         </tr>`;
                     });
                     $("#tablaProductos tbody").html(filas);
@@ -187,38 +209,60 @@ $(document).ready(function () {
             });
         }
 
-        function enviarDatosProducto(rutaImagen) {
-            var productoData = {
-                Codigo: $("#txtCodigo").val(),
-                Descripcion: $("#txtDescripcion").val(),
-                PrecioCompra: parseFloat($("#txtPrecioCompra").val()) || 0,
-                PrecioVenta: parseFloat($("#txtPrecioVenta").val()) || 0,
-                Impuesto: parseFloat($("#txtImpuesto").val()) || 0,
-                Existencia: parseInt($("#txtExistencia").val()) || 0,
-                CategoriaId: parseInt($("#<%= ddlCategoria.ClientID %>").val()) || 1,
-                FotografiaRuta: rutaImagen
-            };
-
-            $.ajax({
-                type: "POST",
-                url: "ServiciosInventario.asmx/RegistrarProducto",
-                data: JSON.stringify({ producto: productoData }),
-                contentType: "application/json; charset=utf-8",
-                dataType: "json",
-                success: function (response) {
-                    var res = response.d;
-                    if (res.Exitoso) {
-                        alert(res.Mensaje);
-                        location.reload(); // Recarga para actualizar la tabla y limpiar el modal
-                    } else {
-                        alert("Error: " + res.Mensaje);
+        function eliminarProducto(codigo) {
+            if (confirm("¿Estás seguro de eliminar este producto con código " + codigo + "?")) {
+                $.ajax({
+                    type: "POST",
+                    url: "ServiciosInventario.asmx/EliminarProducto",
+                    data: JSON.stringify({ codigo: codigo }),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (response) {
+                        alert("Producto eliminado correctamente.");
+                        cargarProductos("");
+                    },
+                    error: function (err) {
+                        alert("Error al intentar eliminar el producto.");
                     }
-                },
-                error: function (err) {
-                    alert("Error al registrar el producto.");
-                }
-            });
+                });
+            }
         }
+
+function enviarDatosProducto(rutaImagen) {
+    var productoData = {
+        Codigo: $("#txtCodigo").val(),
+        Descripcion: $("#txtDescripcion").val(),
+        PrecioCompra: parseFloat($("#txtPrecioCompra").val()) || 0,
+        PrecioVenta: parseFloat($("#txtPrecioVenta").val()) || 0,
+        Impuesto: parseFloat($("#txtImpuesto").val()) || 0,
+        Existencia: parseInt($("#txtExistencia").val()) || 0,
+        CategoriaId: parseInt($("[id$='ddlCategoria']").val()) || 1,
+        FotografiaRuta: rutaImagen
+    };
+
+    var urlServicio = modoEdicion ? "ServiciosInventario.asmx/ActualizarProducto" : "ServiciosInventario.asmx/RegistrarProducto";
+
+    $.ajax({
+        type: "POST",
+        url: urlServicio,
+        data: JSON.stringify({ producto: productoData }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+            var res = response.d;
+            if (res.Exitoso) {
+                alert(res.Mensaje);
+                location.reload();
+            } else {
+                alert("Error del servidor: " + res.Mensaje);
+            }
+        },
+        error: function (xhr, status, error) {
+            console.log("Error completo:", xhr.responseText);
+            alert("Error HTTP: " + xhr.status + " - " + xhr.statusText + "\nDetalle: " + xhr.responseText);
+        }
+    });
+}
     </script>
 </body>
 </html>

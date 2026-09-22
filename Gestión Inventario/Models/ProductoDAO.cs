@@ -8,7 +8,7 @@ namespace Gestion_Inventario.Models
 {
     public class ProductoDAO
     {
-        private readonly string conexionString = ConfigurationManager.ConnectionStrings["ConexionDB"].ConnectionString;
+        private readonly string conexionString = ConfigurationManager.ConnectionStrings["GestionInventario"].ConnectionString;
 
         // Método para insertar un producto
         public RespuestaDTO InsertarProducto(ProductoDTO producto)
@@ -48,7 +48,7 @@ namespace Gestion_Inventario.Models
 
         public bool ValidarUsuario(string nombreUsuario, string passwordHash)
         {
-            string conexionString = ConfigurationManager.ConnectionStrings["ConexionDB"].ConnectionString;
+            string conexionString = ConfigurationManager.ConnectionStrings["GestionInventario"].ConnectionString;
             using (SqlConnection conexion = new SqlConnection(conexionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SP_ValidarUsuario", conexion))
@@ -64,7 +64,7 @@ namespace Gestion_Inventario.Models
             }
         }
 
-        // Método para obtener y buscar productos dinámicamente
+        // Método para obtener y buscar productos 
         public List<ProductoDTO> ObtenerProductos(string filtro)
         {
             List<ProductoDTO> lista = new List<ProductoDTO>();
@@ -97,6 +97,11 @@ namespace Gestion_Inventario.Models
                 }
             }
             return lista;
+        }
+
+        internal static RespuestaDTO ActualizarProducto(ProductoDTO producto)
+        {
+            throw new NotImplementedException();
         }
     }
 }
