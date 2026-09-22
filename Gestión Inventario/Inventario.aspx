@@ -25,10 +25,15 @@
         <div class="container py-4">
             <h2 class="mb-4 text-center">Control de Inventario</h2>
 
-            <!-- Barra de Herramientas: Búsqueda y Botón Nuevo -->
+            <!-- Barra de Herramientas: Búsqueda, Filtro por Categoría y Botón Nuevo -->
             <div class="row mb-3 g-2">
-                <div class="col-md-8 col-sm-12">
-                    <input type="text" id="txtBuscar" class="form-control" placeholder="Buscar por código, descripción o categoría..." />
+                <div class="col-md-5 col-sm-12">
+                    <input type="text" id="txtBuscar" class="form-control" placeholder="Buscar por código o descripción..." />
+                </div>
+                <div class="col-md-3 col-sm-12">
+                    <asp:DropDownList ID="ddlFiltroCategoria" runat="server" CssClass="form-select" AppendDataBoundItems="true">
+                        <asp:ListItem Value="">Todas las Categorías</asp:ListItem>
+                    </asp:DropDownList>
                 </div>
                 <div class="col-md-4 col-sm-12 text-md-end">
                     <button type="button" class="btn btn-success w-100" onclick="abrirModalRegistrar()">
@@ -125,37 +130,64 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Script AJAX personalizado -->
-    <<!-- Script AJAX personalizado -->
     <script>
         var modoEdicion = false;
         var fotoActual = "";
 
         $(document).ready(function () {
-            cargarProductos("");
+            cargarProductos("", "");
 
             $("#txtBuscar").on("keyup", function () {
-                var filtro = $(this).val();
-                cargarProductos(filtro);
+                var filtroTexto = $(this).val();
+                var categoriaId = $("[id$='ddlFiltroCategoria']").val();
+                cargarProductos(filtroTexto, categoriaId);
+            });
+
+            // Evento cuando seleccionas una categoría en el ComboBox de la barra superior
+            $("[id$='ddlFiltroCategoria']").on("change", function () {
+                var filtroTexto = $("#txtBuscar").val();
+                var categoriaId = $(this).val();
+                cargarProductos(filtroTexto, categoriaId);
             });
 
             $("#btnGuardar").off("click").on("click", function () {
-                enviarDatosProducto(fotoActual);
+                var codigo = $("#txtCodigo").val().trim();
+                var desc = $("#txtDescripcion").val().trim();
+
+                if (!codigo) {
+                    alert("¡El campo Código del Producto es obligatorio y no puede estar vacío!");
+                    $("#txtCodigo").focus();
+                    return;
+                }
+
+                if (!desc) {
+                    alert("Por favor, ingresa una descripción.");
+                    $("#txtDescripcion").focus();
+                    return;
+                }
+
+                enviarDatosProductoSaltandoJSON(fotoActual);
             });
         });
 
         function abrirModalRegistrar() {
-            modoEdicion = false;
+            modoEdicion = false; 
             fotoActual = "";
             $("#modalTitulo").text("Nuevo Producto");
-            $("#txtCodigo").val("").prop("readonly", false);
+
+            $("#txtCodigo").val("").prop("readonly", false).focus();
             $("#txtDescripcion").val("");
             $("#txtPrecioCompra").val("");
             $("#txtPrecioVenta").val("");
             $("#txtImpuesto").val("15.00");
             $("#txtExistencia").val("");
             $("#FileUpload1").val("");
-            
-            var myModal = new bootstrap.Modal(document.getElementById('modalProducto'));
+
+            var modalEl = document.getElementById('modalProducto');
+            var myModal = bootstrap.Modal.getInstance(modalEl);
+            if (!myModal) {
+                myModal = new bootstrap.Modal(modalEl);
+            }
             myModal.show();
         }
 
@@ -163,7 +195,7 @@
             modoEdicion = true;
             fotoActual = fotografiaRuta || "";
             $("#modalTitulo").text("Editar Producto");
-            $("#txtCodigo").val(codigo).prop("readonly", true); // Bloquea el código para evitar conflictos de llave
+            $("#txtCodigo").val(codigo).prop("readonly", true);
             $("#txtDescripcion").val(descripcion);
             $("#txtPrecioCompra").val(pCompra);
             $("#txtPrecioVenta").val(pVenta);
@@ -171,11 +203,15 @@
             $("[id$='ddlCategoria']").val(categoriaId);
             $("#FileUpload1").val("");
 
-            var myModal = new bootstrap.Modal(document.getElementById('modalProducto'));
+            var modalEl = document.getElementById('modalProducto');
+            var myModal = bootstrap.Modal.getInstance(modalEl);
+            if (!myModal) {
+                myModal = new bootstrap.Modal(modalEl);
+            }
             myModal.show();
         }
 
-        function cargarProductos(filtro) {
+        function cargarProductos(filtro, categoriaId) {
             $.ajax({
                 type: "POST",
                 url: "ServiciosInventario.asmx/ObtenerProductos",
@@ -185,22 +221,34 @@
                 success: function (response) {
                     var productos = response.d;
                     var filas = "";
+
+                    var textoCategoriaSeleccionada = $("[id$='ddlFiltroCategoria'] option:selected").text().trim();
+                    var filtrarPorCat = (categoriaId && categoriaId !== "" && textoCategoriaSeleccionada !== "Todas las Categorías");
+
                     $.each(productos, function (i, p) {
+                        if (filtrarPorCat) {
+                            var catProducto = (p.NombreCategoria || "").trim();
+                            if (catProducto.toLowerCase() !== textoCategoriaSeleccionada.toLowerCase()) {
+                                return;
+                            }
+                        }
+
                         var foto = p.FotografiaRuta ? p.FotografiaRuta : "https://via.placeholder.com/50";
                         filas += `<tr>
-                            <td><img src="${foto}" width="45" height="45" class="rounded-circle object-fit-cover" /></td>
-                            <td>${p.Codigo}</td>
-                            <td>${p.Descripcion}</td>
-                            <td>$${p.PrecioCompra.toFixed(2)}</td>
-                            <td>$${p.PrecioVenta.toFixed(2)}</td>
-                            <td><span class="badge bg-secondary">${p.Existencia}</span></td>
-                            <td>${p.NombreCategoria}</td>
-                            <td>
-                                <button type="button" class="btn btn-warning btn-sm me-1" onclick="prepararEdicion('${p.Codigo}', '${p.Descripcion}', ${p.PrecioCompra}, ${p.PrecioVenta}, ${p.Existencia}, ${p.CategoriaId}, '${p.FotografiaRuta || ''}')">Editar</button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto('${p.Codigo}')">Eliminar</button>
-                            </td>
-                        </tr>`;
+                                    <td><img src="${foto}" width="70" height="70" class="rounded object-fit-cover" /></td>
+                                    <td>${p.Codigo}</td>
+                                    <td>${p.Descripcion}</td>
+                                    <td>$${p.PrecioCompra.toFixed(2)}</td>
+                                    <td>$${p.PrecioVenta.toFixed(2)}</td>
+                                    <td><span class="badge bg-secondary">${p.Existencia}</span></td>
+                                    <td>${p.NombreCategoria}</td>
+                                    <td>
+                                        <button type="button" class="btn btn-warning btn-sm me-1" onclick="prepararEdicion('${p.Codigo}', '${p.Descripcion}', ${p.PrecioCompra}, ${p.PrecioVenta}, ${p.Existencia}, ${p.CategoriaId}, '${p.FotografiaRuta || ''}')">Editar</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto('${p.Codigo}')">Eliminar</button>
+                                    </td>
+                                </tr>`;
                     });
+
                     $("#tablaProductos tbody").html(filas);
                 },
                 error: function (err) {
@@ -218,51 +266,77 @@
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function (response) {
-                        alert("Producto eliminado correctamente.");
-                        cargarProductos("");
+                        var res = response.d;
+                        if (res.Exitoso) {
+                            alert(res.Mensaje);
+                            var filtroActual = $("#txtBuscar").val();
+                            var categoriaActual = $("[id$='ddlFiltroCategoria']").val();
+                            cargarProductos(filtroActual, categoriaActual);
+                        } else {
+                            alert("Error del servidor: " + res.Mensaje);
+                        }
                     },
-                    error: function (err) {
+                    error: function (xhr) {
                         alert("Error al intentar eliminar el producto.");
                     }
                 });
             }
         }
 
-function enviarDatosProducto(rutaImagen) {
-    var productoData = {
-        Codigo: $("#txtCodigo").val(),
-        Descripcion: $("#txtDescripcion").val(),
-        PrecioCompra: parseFloat($("#txtPrecioCompra").val()) || 0,
-        PrecioVenta: parseFloat($("#txtPrecioVenta").val()) || 0,
-        Impuesto: parseFloat($("#txtImpuesto").val()) || 0,
-        Existencia: parseInt($("#txtExistencia").val()) || 0,
-        CategoriaId: parseInt($("[id$='ddlCategoria']").val()) || 1,
-        FotografiaRuta: rutaImagen
-    };
+        function enviarDatosProductoSaltandoJSON(rutaImagen) {
+            var formData = new FormData();
+            formData.append("Codigo", $("#txtCodigo").val());
+            formData.append("Descripcion", $("#txtDescripcion").val());
+            formData.append("PrecioCompra", $("#txtPrecioCompra").val());
+            formData.append("PrecioVenta", $("#txtPrecioVenta").val());
+            formData.append("Impuesto", $("#txtImpuesto").val());
+            formData.append("Existencia", $("#txtExistencia").val());
+            formData.append("CategoriaId", $("[id$='ddlCategoria']").val());
 
-    var urlServicio = modoEdicion ? "ServiciosInventario.asmx/ActualizarProducto" : "ServiciosInventario.asmx/RegistrarProducto";
-
-    $.ajax({
-        type: "POST",
-        url: urlServicio,
-        data: JSON.stringify({ producto: productoData }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (response) {
-            var res = response.d;
-            if (res.Exitoso) {
-                alert(res.Mensaje);
-                location.reload();
+            var archivo = $("#FileUpload1")[0].files[0];
+            if (archivo) {
+                formData.append("ImagenFile", archivo);
             } else {
-                alert("Error del servidor: " + res.Mensaje);
+                formData.append("FotografiaRuta", rutaImagen);
             }
-        },
-        error: function (xhr, status, error) {
-            console.log("Error completo:", xhr.responseText);
-            alert("Error HTTP: " + xhr.status + " - " + xhr.statusText + "\nDetalle: " + xhr.responseText);
+
+            var urlServicio = modoEdicion ? "ServiciosInventario.asmx/ActualizarProductoConFoto" : "ServiciosInventario.asmx/RegistrarProductoConFoto";
+
+            $.ajax({
+                type: "POST",
+                url: urlServicio,
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    var res = response.d !== undefined ? response.d : response;
+
+                    if (typeof res === "string") {
+                        try { res = JSON.parse(res); } catch (e) { }
+                    }
+
+                    if (res && (res.Exitoso === true || res.Exitoso === "true" || res.Mensaje)) {
+                        alert(res.Mensaje || "¡Operación realizada con éxito!");
+                    } else {
+                        alert("¡Producto guardado/actualizado con éxito!");
+                    }
+
+                    var modalEl = document.getElementById('modalProducto');
+                    var modalInstance = bootstrap.Modal.getInstance(modalEl);
+                    if (modalInstance) {
+                        modalInstance.hide();
+                    }
+
+                    var filtroActual = $("#txtBuscar").val();
+                    var categoriaActual = $("[id$='ddlFiltroCategoria']").val();
+                    cargarProductos(filtroActual, categoriaActual);
+                },
+                error: function (xhr, status, error) {
+                    console.log("Error completo:", xhr.responseText);
+                    alert("Error en la petición AJAX: " + xhr.statusText);
+                }
+            });
         }
-    });
-}
     </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Web.UI.WebControls;
 
@@ -26,6 +27,7 @@ namespace Gestion_Inventario
         private void CargarCategorias()
         {
             string connectionString = ConfigurationManager.ConnectionStrings["GestionInventario"].ConnectionString;
+            DataTable dt = new DataTable();
 
             using (SqlConnection conexion = new SqlConnection(connectionString))
             {
@@ -37,26 +39,34 @@ namespace Gestion_Inventario
                         conexion.Open();
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            ddlCategoria.DataSource = reader;
-                            ddlCategoria.DataTextField = "NombreCategoria";
-                            ddlCategoria.DataValueField = "CategoriaId";
-                            ddlCategoria.DataBind();
+                            dt.Load(reader);
                         }
                     }
-                    catch (Exception )
+                    catch (Exception)
                     {
+                        // Manejo de errores de conexión o consulta
                     }
                 }
             }
 
+            ddlCategoria.DataSource = dt;
+            ddlCategoria.DataTextField = "NombreCategoria";
+            ddlCategoria.DataValueField = "CategoriaId";
+            ddlCategoria.DataBind();
             ddlCategoria.Items.Insert(0, new ListItem("-- Seleccione una categoría --", ""));
+
+            ddlFiltroCategoria.DataSource = dt;
+            ddlFiltroCategoria.DataTextField = "NombreCategoria";
+            ddlFiltroCategoria.DataValueField = "CategoriaId";
+            ddlFiltroCategoria.DataBind();
+         
         }
 
         protected void lnkCerrarSesion_Click(object sender, EventArgs e)
         {
             Session.Clear();
             Session.Abandon();
-            Response.Redirect("Login.aspx"); 
+            Response.Redirect("Login.aspx");
         }
 
         protected void gvProductos_RowCommand(object sender, GridViewCommandEventArgs e)

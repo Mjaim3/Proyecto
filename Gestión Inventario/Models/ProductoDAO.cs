@@ -99,9 +99,64 @@ namespace Gestion_Inventario.Models
             return lista;
         }
 
-        internal static RespuestaDTO ActualizarProducto(ProductoDTO producto)
+        // Método para actualizar un producto existente
+        public RespuestaDTO ActualizarProducto(ProductoDTO producto)
         {
-            throw new NotImplementedException();
+            RespuestaDTO respuesta = new RespuestaDTO();
+            using (SqlConnection conexion = new SqlConnection(conexionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_ActualizarProducto", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Codigo", producto.Codigo);
+                    cmd.Parameters.AddWithValue("@Descripcion", producto.Descripcion);
+                    cmd.Parameters.AddWithValue("@PrecioCompra", producto.PrecioCompra);
+                    cmd.Parameters.AddWithValue("@PrecioVenta", producto.PrecioVenta);
+                    cmd.Parameters.AddWithValue("@Impuesto", producto.Impuesto);
+                    cmd.Parameters.AddWithValue("@Existencia", producto.Existencia);
+                    cmd.Parameters.AddWithValue("@CategoriaId", producto.CategoriaId);
+                    cmd.Parameters.AddWithValue("@FotografiaRuta", (object)producto.FotografiaRuta ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@HashProducto", (object)producto.HashProducto ?? DBNull.Value);
+
+                    try
+                    {
+                        conexion.Open();
+                        cmd.ExecuteNonQuery();
+                        respuesta.Exitoso = true;
+                        respuesta.Mensaje = "Producto actualizado correctamente.";
+                    }
+                    catch (Exception ex)
+                    {
+                        respuesta.Exitoso = false;
+                        respuesta.Mensaje = "Error al actualizar el producto: " + ex.Message;
+                    }
+                }
+            }
+            return respuesta;
+        }
+
+        // Método para eliminar un producto por su código alfanumérico
+        public bool Eliminar(string codigo)
+        {
+            using (SqlConnection conexion = new SqlConnection(conexionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SP_EliminarProducto", conexion))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Codigo", codigo);
+
+                    try
+                    {
+                        conexion.Open();
+                        int filasAfectadas = cmd.ExecuteNonQuery();
+                        return filasAfectadas > 0;
+                    }
+                    catch (Exception)
+                    {
+                        return false;
+                    }
+                }
+            }
         }
     }
 }
